@@ -1,0 +1,14 @@
+C:\Users\nogger\Desktop\Poshelnahuy.ware\src\dllmain.cpp;C:\Users\nogger\Desktop\Poshelnahuy.ware\Poshelnahuy.ware.dir\Release\dllmain.obj
+C:\Users\nogger\Desktop\Poshelnahuy.ware\src\menu.cpp;C:\Users\nogger\Desktop\Poshelnahuy.ware\Poshelnahuy.ware.dir\Release\menu.obj
+C:\Users\nogger\Desktop\Poshelnahuy.ware\src\kiero.cpp;C:\Users\nogger\Desktop\Poshelnahuy.ware\Poshelnahuy.ware.dir\Release\kiero.obj
+C:\Users\nogger\Desktop\Poshelnahuy.ware\src\imgui\imgui.cpp;C:\Users\nogger\Desktop\Poshelnahuy.ware\Poshelnahuy.ware.dir\Release\imgui.obj
+C:\Users\nogger\Desktop\Poshelnahuy.ware\src\imgui\imgui_draw.cpp;C:\Users\nogger\Desktop\Poshelnahuy.ware\Poshelnahuy.ware.dir\Release\imgui_draw.obj
+C:\Users\nogger\Desktop\Poshelnahuy.ware\src\imgui\imgui_impl_dx11.cpp;C:\Users\nogger\Desktop\Poshelnahuy.ware\Poshelnahuy.ware.dir\Release\imgui_impl_dx11.obj
+C:\Users\nogger\Desktop\Poshelnahuy.ware\src\imgui\imgui_impl_win32.cpp;C:\Users\nogger\Desktop\Poshelnahuy.ware\Poshelnahuy.ware.dir\Release\imgui_impl_win32.obj
+C:\Users\nogger\Desktop\Poshelnahuy.ware\src\imgui\imgui_tables.cpp;C:\Users\nogger\Desktop\Poshelnahuy.ware\Poshelnahuy.ware.dir\Release\imgui_tables.obj
+C:\Users\nogger\Desktop\Poshelnahuy.ware\src\imgui\imgui_widgets.cpp;C:\Users\nogger\Desktop\Poshelnahuy.ware\Poshelnahuy.ware.dir\Release\imgui_widgets.obj
+C:\Users\nogger\Desktop\Poshelnahuy.ware\src\minhook\src\buffer.c;C:\Users\nogger\Desktop\Poshelnahuy.ware\Poshelnahuy.ware.dir\Release\buffer.obj
+C:\Users\nogger\Desktop\Poshelnahuy.ware\src\minhook\src\hook.c;C:\Users\nogger\Desktop\Poshelnahuy.ware\Poshelnahuy.ware.dir\Release\hook.obj
+C:\Users\nogger\Desktop\Poshelnahuy.ware\src\minhook\src\trampoline.c;C:\Users\nogger\Desktop\Poshelnahuy.ware\Poshelnahuy.ware.dir\Release\trampoline.obj
+C:\Users\nogger\Desktop\Poshelnahuy.ware\src\minhook\src\hde\hde32.c;C:\Users\nogger\Desktop\Poshelnahuy.ware\Poshelnahuy.ware.dir\Release\hde32.obj
+C:\Users\nogger\Desktop\Poshelnahuy.ware\src\minhook\src\hde\hde64.c;C:\Users\nogger\Desktop\Poshelnahuy.ware\Poshelnahuy.ware.dir\Release\hde64.obj

@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "windows.h"
 #include <stdio.h>
+#include "menu.h"
 
 void WINAPI INIT() {
 
@@ -34,7 +35,9 @@ void WINAPI INIT() {
 
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved){
     if (ul_reason_for_call == DLL_PROCESS_ATTACH) {
-        HANDLE hMainThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)INIT, NULL, 0, NULL);
+        DisableThreadLibraryCalls(hModule);
+        CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)INIT, NULL, 0, NULL);
+        CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)OVERLAY_THREAD, NULL, 0, NULL);
     }
     return TRUE;
 }
