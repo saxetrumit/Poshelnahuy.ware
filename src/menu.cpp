@@ -1,4 +1,5 @@
 #include <Windows.h>
+#include <stdio.h>
 #include <d3d11.h>
 #include <dxgi.h>
 #include "kiero.h"
@@ -10,7 +11,13 @@ typedef HRESULT(__stdcall* Present) (IDXGISwapChain* pSwapChain, UINT SyncInterv
 typedef LRESULT(CALLBACK* WNDPROC)(HWND, UINT, WPARAM, LPARAM);
 typedef uintptr_t PTR;
 
+typedef struct SDL_Window SDL_Window;
+
+typedef SDL_Window** (__stdcall* SDL_GetWindows)(int * count);
+typedef bool (__stdcall* SDL_SetWindowRelativeMouseMode)(SDL_Window* window, bool enabled);
+
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
 
 Present oPresent;
 HWND window = NULL;
@@ -18,6 +25,15 @@ WNDPROC oWndProc;
 ID3D11Device* pDevice = NULL;
 ID3D11DeviceContext* pContext = NULL;
 ID3D11RenderTargetView* mainRenderTargetView;
+
+HMODULE hSDL3 = GetModuleHandleA("SDL3.dll");
+
+SDL_SetWindowRelativeMouseMode pSDL_SetWindowRelativeMouseMode;
+SDL_GetWindows pSDL_GetWindows;
+
+bool MENU_ACTIVE = false;
+bool MOUSE_CAPTURE_STATE = false;
+int windows = 0;
 
 void InitImGui()
 {
@@ -29,8 +45,12 @@ void InitImGui()
 }
 
 LRESULT __stdcall WndProc(const HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
-    if (true && ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam))
-        return true;
+    if (MENU_ACTIVE){
+        if (ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam)) 
+            return false;
+        if (uMsg) return true;
+    }
+
     return CallWindowProc(oWndProc, hWnd, uMsg, wParam, lParam);
 }
 
@@ -50,6 +70,9 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
             oWndProc = (WNDPROC)SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)WndProc);
             InitImGui();
             init = true;
+
+			pSDL_SetWindowRelativeMouseMode = (SDL_SetWindowRelativeMouseMode)GetProcAddress(hSDL3, "SDL_SetWindowRelativeMouseMode");
+            pSDL_GetWindows = (SDL_GetWindows)GetProcAddress(hSDL3, "SDL_GetWindows");
         }
         else
             return oPresent(pSwapChain, SyncInterval, Flags);
@@ -57,9 +80,21 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
 
     ImGui_ImplDX11_NewFrame();
     ImGui_ImplWin32_NewFrame();
+
+	if ((GetAsyncKeyState(VK_INSERT) & 0x01)){
+		MENU_ACTIVE = !MENU_ACTIVE;
+        pSDL_SetWindowRelativeMouseMode(pSDL_GetWindows(&windows)[0], MOUSE_CAPTURE_STATE);
+        MOUSE_CAPTURE_STATE = !MOUSE_CAPTURE_STATE;
+	}
+
+    ImGui::GetIO().MouseDrawCursor = MENU_ACTIVE;
+
     ImGui::NewFrame();
-    ImGui::Begin("ImGui Window");
-    ImGui::End();
+	if (MENU_ACTIVE){
+		ImGui::Begin("Poshelnahuy.ware");
+		ImGui::End();
+	}
+
     ImGui::Render();
     pContext->OMSetRenderTargets(1, &mainRenderTargetView, NULL);
     ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
