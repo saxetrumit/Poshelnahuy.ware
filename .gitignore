@@ -40,18 +40,13 @@
 # debug information files
 *.dwo
 
+#trash
 *.cmake
-/CMakeCache.txt
-/ALL_BUILD.vcxproj
-/ALL_BUILD.vcxproj.filters
-/DLL_RESOURCES.vcxproj
-/DLL_RESOURCES.vcxproj.filters
-
-/ZERO_CHECK.vcxproj
-/ZERO_CHECK.vcxproj.filters
-
+*.vcxproj
+*.vcxproj.filters
 /x64/
 /Poshelnahuy.ware.dir/
 /DLL_RESOURCES.dir/
 /CMakeFiles
 /Release
+/CMakeCache.txt
