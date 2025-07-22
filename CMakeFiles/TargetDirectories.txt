@@ -1,4 +1,0 @@
-C:/Users/nogger/Desktop/Poshelnahuy.ware/CMakeFiles/DLL_RESOURCES.dir
-C:/Users/nogger/Desktop/Poshelnahuy.ware/CMakeFiles/Poshelnahuy.ware.dir
-C:/Users/nogger/Desktop/Poshelnahuy.ware/CMakeFiles/ALL_BUILD.dir
-C:/Users/nogger/Desktop/Poshelnahuy.ware/CMakeFiles/ZERO_CHECK.dir

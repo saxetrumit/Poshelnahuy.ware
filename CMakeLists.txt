@@ -36,7 +36,3 @@ add_library(DLL_RESOURCES OBJECT
 add_library(Poshelnahuy.ware SHARED ${SOURCE_FILES})
 target_link_libraries(Poshelnahuy.ware ${CMAKE_THREAD_LIBS_INIT} d3d11 dxgi user32 gdi32 DLL_RESOURCES)
 
-if(EXISTS ${CMAKE_SOURCE_DIR}/src/minhook/dll_resources/MinHook.def)
-    set_target_properties(Poshelnahuy.ware PROPERTIES LINK_FLAGS "/DEF:${CMAKE_SOURCE_DIR}/src/minhook/dll_resources/MinHook.def")
-endif()
-
