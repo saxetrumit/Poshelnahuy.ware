@@ -41,15 +41,17 @@
 *.dwo
 
 *.cmake
-$GIT_DIR/CMakeCache.txt
-$GIT_DIR/ALL_BUILD.vcxproj
-$GIT_DIR/ALL_BUILD.vcxproj.filters
-$GIT_DIR/DLL_RESOURCES.vcxproj
-$GIT_DIR/DLL_RESOURCES.vcxproj.filters
+/CMakeCache.txt
+/ALL_BUILD.vcxproj
+/ALL_BUILD.vcxproj.filters
+/DLL_RESOURCES.vcxproj
+/DLL_RESOURCES.vcxproj.filters
 
-$GIT_DIR/ZERO_CHECK.vcxproj
-$GIT_DIR/ZERO_CHECK.vcxproj.filters
+/ZERO_CHECK.vcxproj
+/ZERO_CHECK.vcxproj.filters
 
-$GIT_DIR/x64
-$GIT_DIR/Poshelnahuy.ware.dir
-$GIT_DIR/DLL_RESOURCES.dir/CMakeFiles
+/x64/
+/Poshelnahuy.ware.dir/
+/DLL_RESOURCES.dir/
+/CMakeFiles
+/Release
