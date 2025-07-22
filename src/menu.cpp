@@ -18,7 +18,6 @@ typedef bool (__stdcall* SDL_SetWindowRelativeMouseMode)(SDL_Window* window, boo
 
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
-
 Present oPresent;
 HWND window = NULL;
 WNDPROC oWndProc;
