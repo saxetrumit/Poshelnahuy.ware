@@ -39,3 +39,8 @@
 
 # debug information files
 *.dwo
+*.cmake
+CMakeCache.txt
+$GIT_DIR/x64
+$GIT_DIR/Poshelnahuy.ware.dir
+$GIT_DIR/DLL_RESOURCES.dir/CMakeFiles
