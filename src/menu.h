@@ -1,2 +1,3 @@
 #pragma once
+
 DWORD WINAPI OVERLAY_THREAD(LPVOID lpReserved);

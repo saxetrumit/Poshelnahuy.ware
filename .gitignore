@@ -45,6 +45,7 @@
 *.vcxproj
 *.vcxproj.filters
 *.sln
+/.vscode/
 /x64/
 /Poshelnahuy.ware.dir/
 /DLL_RESOURCES.dir/
